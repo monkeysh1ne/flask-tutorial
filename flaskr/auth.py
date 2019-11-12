@@ -52,7 +52,7 @@ def register():
 
         
         flash(error)
-        return render_template('auth/register.html')
+    return render_template('auth/register.html')
 
 
 
@@ -80,7 +80,7 @@ def login():
 
         flash(error)
 
-        return render_template('auth/login.html')
+    return render_template('auth/login.html')
 
 @bp.route('/logout')
 def logout():
@@ -95,4 +95,5 @@ def login_required(view):
             return redirect(url_for('auth.login'))
 
         return view(**kwargs)
+
     return wrapped_view
