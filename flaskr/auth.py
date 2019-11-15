@@ -85,7 +85,7 @@ def login():
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect_url(url_for('index'))
+    return redirect(url_for('index'))
 
 
 def login_required(view):
@@ -96,4 +96,4 @@ def login_required(view):
 
         return view(**kwargs)
 
-    return wrapped_view
+    return wrapped_view 
